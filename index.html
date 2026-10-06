@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saint Anthony's Pharmacy Limited</title>
+<meta name="description" content="Saint Anthony's Pharmacy Limited in Anambra State. Medicines, prescriptions, lab tests, vaccinations, blood pressure checks and home delivery. Open every day, 7am to 10pm.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+/* COLORS: change one value here and the whole site changes */
+:root{
+  --bg:#F6FAF8; --ink:#14302F; --muted:#4E6967; --brand:#0F5C55; --wash:#E3F0EB;
+  --line:#C9DDD6; --accent:#E8A33D; --on-accent:#2A1B00;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0E1B1A;--ink:#E7F2EF;--muted:#9DB8B4;--brand:#59BDB2;--wash:#152927;--line:#25403D}
+}
+:root[data-theme="dark"]{--bg:#0E1B1A;--ink:#E7F2EF;--muted:#9DB8B4;--brand:#59BDB2;--wash:#152927;--line:#25403D}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;padding-bottom:84px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+h1{font-size:clamp(2.1rem,8vw,3.3rem)}
+h2{font-size:1.7rem;margin-bottom:14px}
+h3{font-size:1.1rem;color:var(--brand);margin-bottom:4px}
+p{margin:0 0 14px;max-width:62ch}
+a{color:var(--brand)}
+
+/* TOP BAR */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.logo{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.1rem;color:var(--brand);text-decoration:none}
+.nav{display:flex;gap:16px;font-weight:700;font-size:.95rem}
+.nav a{color:var(--ink);text-decoration:none}
+@media(max-width:520px){.nav a:nth-child(n+3){display:none}}
+
+/* HERO */
+.hero{padding:40px 0 28px}
+.hero p.lead{font-size:1.15rem;color:var(--muted);margin:16px 0 22px}
+.open{display:inline-block;background:var(--wash);color:var(--brand);font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:16px;font-size:.95rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none}
+.btn.main{background:var(--accent);color:var(--on-accent)}
+.btn.alt{border:2px solid var(--brand);color:var(--brand)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* PHOTO SLOTS: empty slots show a dashed box until you add a photo */
+.ph{aspect-ratio:16/10;border:2px dashed var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:12px;font-size:.95rem;overflow:hidden;background:var(--wash)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.has{border:0}
+.gallery{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}.gallery .ph{aspect-ratio:4/3}}
+
+/* SECTIONS */
+section{padding:34px 0;border-top:1px solid var(--line)}
+.svc{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.svc li{padding:14px 0;border-bottom:1px solid var(--line)}
+.svc li:last-child{border-bottom:0}
+.svc span{color:var(--muted)}
+.band{background:var(--wash)}
+.steps{padding-left:20px;margin:0}
+.steps li{margin-bottom:8px}
+.note{font-size:.92rem;color:var(--muted)}
+footer{padding:26px 0;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+
+/* STICKY CALL BAR (stays at the bottom of the phone screen) */
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line);z-index:5}
+.bar a{flex:1;text-align:center;padding:13px 8px;border-radius:10px;font-weight:700;text-decoration:none}
+.bar .c{background:var(--brand);color:#fff}
+.bar .w{background:var(--accent);color:var(--on-accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="logo" href="#top" data-fill="name">Saint Anthony's Pharmacy Limited</a>
+    <nav class="nav"><a href="#services">Services</a><a href="#visit">Visit us</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <span class="open">Open every day, 7am to 10pm</span>
+      <h1>Medicines, tests and care in one trusted place.</h1>
+      <p class="lead">From prescriptions to lab tests and home delivery, Saint Anthony's Pharmacy looks after your family's health.</p>
+      <div class="btns">
+        <a class="btn main" data-href="wa" href="#contact">Chat on WhatsApp</a>
+        <a class="btn alt" data-href="tel" href="#contact">Call now</a>
+      </div>
+    </div>
+    <div class="ph" data-photo="hero">Photo space: shop front</div>
+
+    <section id="services">
+      <h2>Our services</h2>
+      <ul class="svc">
+        <li><h3>Prescriptions and medicines</h3><span>Prescription drugs and everyday medicines, with clear advice on how to use them.</span></li>
+        <li><h3>Consultations and treatment</h3><span>Speak to our team about how you feel and get the care you need, including drip treatment.</span></li>
+        <li><h3>Laboratory tests</h3><span>Urine tests and other lab tests done on site.</span></li>
+        <li><h3>Health checks</h3><span>Blood pressure checks and weight checks.</span></li>
+        <li><h3>Vaccinations</h3><span>Ask us which vaccines are available.</span></li>
+        <li><h3>Home delivery</h3><span>Your medicines brought to your door. Message us on WhatsApp to order.</span></li>
+      </ul>
+    </section>
+
+    <section class="band" id="gallery">
+      <h2>Inside the pharmacy</h2>
+      <div class="gallery">
+        <div class="ph" data-photo="g1">Photo space: inside the shop</div>
+        <div class="ph" data-photo="g2">Photo space: lab or treatment area</div>
+        <div class="ph" data-photo="g3">Photo space: our team</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About us</h2>
+      <p>Saint Anthony's Pharmacy Limited is a community pharmacy that also offers consultations, lab tests and treatment, so many of your health needs can be handled in one visit.</p>
+      <p class="note">Always follow your doctor's instructions. This website does not replace medical advice.</p>
+    </section>
+
+    <section id="visit">
+      <h2>Visit us</h2>
+      <p><strong>Address:</strong> <span data-fill="address">Nnewi, Anambra State</span></p>
+      <p><strong>Open:</strong> <span data-fill="hours">Every day, 7am to 10pm</span></p>
+      <div class="ph" data-photo="map">Photo space: map or street view</div>
+    </section>
+
+    <section class="band" id="contact">
+      <h2>Contact us</h2>
+      <p>Call or message us for orders, delivery or questions.</p>
+      <p><strong>Phone and WhatsApp:</strong> <a data-href="tel" data-fill="phone" href="#contact">08167109104</a></p>
+      <div class="btns">
+        <a class="btn main" data-href="wa" href="#contact">Chat on WhatsApp</a>
+        <a class="btn alt" data-href="tel" href="#contact">Call now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="yr"></span> <span data-fill="name">Saint Anthony's Pharmacy Limited</span>. All rights reserved.<br>Website by <span data-fill="designer">Kenneth</span></footer>
+</div>
+
+<div class="bar"><a class="c" data-href="tel" href="#contact">Call</a><a class="w" data-href="wa" href="#contact">WhatsApp</a></div>
+
+<script>
+/* YOUR DETAILS: edit only this box and the whole site updates. */
+var INFO = {
+  name: "Saint Anthony's Pharmacy Limited",
+  phone: "08167109104",
+  whatsapp: "2348167109104",   // country code 234, no leading 0, no + or spaces
+  address: "Nnewi, Anambra State",
+  hours: "Every day, 7am to 10pm",
+  designer: "Kenneth"
+};
+/* PHOTOS: paste a photo address between the quotes when you have one. Empty means the dashed box stays. */
+var PHOTOS = { hero: "", g1: "", g2: "", g3: "", map: "" };
+
+document.querySelectorAll("[data-fill]").forEach(function(el){
+  var v = INFO[el.getAttribute("data-fill")];
+  if (v) el.textContent = v;
+});
+document.querySelectorAll("[data-href]").forEach(function(el){
+  el.href = el.getAttribute("data-href") === "tel"
+    ? "tel:" + INFO.phone
+    : "https://wa.me/" + INFO.whatsapp + "?text=" + encodeURIComponent("Hello, I need help from the pharmacy.");
+});
+document.querySelectorAll("[data-photo]").forEach(function(box){
+  var src = PHOTOS[box.getAttribute("data-photo")];
+  if (src) {
+    var img = document.createElement("img");
+    img.src = src; img.alt = box.textContent.replace("Photo space: ", "");
+    box.textContent = ""; box.appendChild(img); box.classList.add("has");
+  }
+});
+document.title = INFO.name;
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
